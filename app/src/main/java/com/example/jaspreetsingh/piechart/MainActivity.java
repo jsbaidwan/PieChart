@@ -5,16 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+
 
 import java.util.ArrayList;
 
+import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
+
 public class MainActivity extends AppCompatActivity {
 
-    float sales[] = {30f, 20f, 40f, 6f, 4f};
+
+    int sales[] = {0, 12, 1, 1, 38};
     String priorityLables[] = {"Hot+", "Hot", "Warm", "Cold", "Shortfall"};
 
     @Override
@@ -32,9 +36,17 @@ public class MainActivity extends AppCompatActivity {
             pieEnteries.add(new PieEntry(sales[i], priorityLables[i]));
         }
         PieDataSet dataSet = new PieDataSet(pieEnteries, "");
-        // Add Colors to the slices
-        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        // Add customize Colors to the slices
+        dataSet.setColors(rgb("#D50000"), rgb("#E91E63"), rgb("#FFC107"), rgb("#3F51B5"), rgb("#9E9E9E"));
         PieData data = new PieData(dataSet);
+
+
+
+        // Set the text of the values
+        data.setValueTextSize(14);
+        // Disable the slice shift
+        dataSet.setSelectionShift(0);
+
 
         // Get the chart
         PieChart chart = (PieChart) findViewById(R.id.pie_chart);
@@ -43,5 +55,15 @@ public class MainActivity extends AppCompatActivity {
         chart.invalidate();
         // Animate the pic chart build clockwise parameter is time in millisecond
         chart.animateY(2000);
+        // Disable the touch rotation
+        chart.setRotationEnabled(true);
+
+        // Modifying the legends
+        Legend l = chart.getLegend();
+
+        // set the size of the legend text
+        l.setTextSize(14);
+
+
     }
 }

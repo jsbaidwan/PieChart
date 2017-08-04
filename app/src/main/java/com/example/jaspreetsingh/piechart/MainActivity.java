@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         // Get the chart
         PieChart chart = (PieChart) findViewById(R.id.pie_chart);
         chart.setData(data);
-        chart.invalidate(); // for redraw
+        // for redraw
+        chart.invalidate();
+        // Animate the pic chart build clockwise parameter is time in millisecond
+        chart.animateY(2000);
     }
 }

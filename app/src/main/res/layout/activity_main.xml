@@ -10,7 +10,7 @@
     tools:context="com.example.jaspreetsingh.piechart.MainActivity">
 
     <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/piechart"
+        android:id="@+id/pie_chart"
         android:layout_centerInParent="true"
         android:layout_width="300dp"
         android:layout_height="300dp"/>

@@ -8,6 +8,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
             pieEnteries.add(new PieEntry(sales[i], priorityLables[i]));
         }
         PieDataSet dataSet = new PieDataSet(pieEnteries, "");
+        // Add Colors to the slices
+        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
         PieData data = new PieData(dataSet);
 
         // Get the chart

@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Modifying the legends
         Legend l = chart.getLegend();
-
+        // set the legend color size
+        l.setFormSize(14);
         // set the size of the legend text
         l.setTextSize(14);
 

@@ -1,6 +1,7 @@
 package com.example.jaspreetsingh.piechart;
 
 ;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -44,19 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the text of the values
         data.setValueTextSize(14);
+        // Set the color of the values
+        data.setValueTextColor(Color.YELLOW);
         // Disable the slice shift
         dataSet.setSelectionShift(0);
-
+        // Formatting the value from float to integer using custom Formatter
+        dataSet.setValueFormatter(new Formatter());
 
         // Get the chart
         PieChart chart = (PieChart) findViewById(R.id.pie_chart);
         chart.setData(data);
-        // for redraw
+        // refresh chart
         chart.invalidate();
         // Animate the pic chart build clockwise parameter is time in millisecond
         chart.animateY(2000);
         // Disable the touch rotation
         chart.setRotationEnabled(true);
+
+
 
         // Modifying the legends
         Legend l = chart.getLegend();

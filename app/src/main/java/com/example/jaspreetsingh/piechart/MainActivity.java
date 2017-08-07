@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Set the text of the values
-        data.setValueTextSize(14);
+        data.setValueTextSize(20);
         // Set the color of the values
-        data.setValueTextColor(Color.YELLOW);
+        data.setValueTextColor(Color.WHITE);
         // Disable the slice shift
         dataSet.setSelectionShift(0);
         // Formatting the value from float to integer using custom Formatter

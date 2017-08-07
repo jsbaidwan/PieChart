@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        //create an object for Marker View
+        CustomMarkerView mv = new CustomMarkerView(this, R.layout.marker_view);
+
         setupPieChart();
     }
 
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         // Add customize Colors to the slices
         dataSet.setColors(rgb("#D50000"), rgb("#E91E63"), rgb("#FFC107"), rgb("#3F51B5"), rgb("#9E9E9E"));
         PieData data = new PieData(dataSet);
+
+        //create an object for Marker View
+        CustomMarkerView mv = new CustomMarkerView(this, R.layout.marker_view);
 
 
         // Set the text of the values
@@ -62,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         chart.setRotationEnabled(true);
         // Remove legends from pie chart
         chart.setDrawEntryLabels(false);
+
+        chart.setMarker(mv);
 
 
         // Modifying the legends

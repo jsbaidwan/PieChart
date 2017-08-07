@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -27,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //create an object for Marker View
-        CustomMarkerView mv = new CustomMarkerView(this, R.layout.marker_view);
 
         setupPieChart();
     }
@@ -52,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         data.setValueTextSize(16);
         // Set the color of the values
         data.setValueTextColor(Color.BLACK);
-        // Disable the slice shift
-        dataSet.setSelectionShift(0);
+        // Enable the slice shift
+        dataSet.setSelectionShift(5);
         // Formatting the value from float to integer using custom Formatter
         data.setValueFormatter(new Formatter());
 
@@ -69,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         // Remove legends from pie chart
         chart.setDrawEntryLabels(false);
 
+
+        // set Marker view to pie chart
         chart.setMarker(mv);
 
 
@@ -81,4 +82,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }

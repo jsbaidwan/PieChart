@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.utils.MPPointF;
 
 /**
  * Created by jaspreet.singh on 8/7/2017.
@@ -29,7 +30,13 @@ public class CustomMarkerView extends MarkerView {
     // content (user-interface)
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
-        super.refreshContent(e, highlight);
+
         tvContent.setText("" + (int) e.getY()); // set the entry-value as the display text
+        // this will perform necessary layout
+        super.refreshContent(e, highlight);
+    }
+    @Override
+    public MPPointF getOffset() {
+        return new MPPointF(-(getWidth() ), -getHeight()  );
     }
 }

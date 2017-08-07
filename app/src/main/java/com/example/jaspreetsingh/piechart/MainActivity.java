@@ -42,11 +42,10 @@ public class MainActivity extends AppCompatActivity {
         PieData data = new PieData(dataSet);
 
 
-
         // Set the text of the values
-        data.setValueTextSize(20);
+        data.setValueTextSize(16);
         // Set the color of the values
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(Color.BLACK);
         // Disable the slice shift
         dataSet.setSelectionShift(0);
         // Formatting the value from float to integer using custom Formatter
@@ -61,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         chart.animateY(2000);
         // Disable the touch rotation
         chart.setRotationEnabled(true);
-
+        // Remove legends from pie chart
+        chart.setDrawEntryLabels(false);
 
 
         // Modifying the legends

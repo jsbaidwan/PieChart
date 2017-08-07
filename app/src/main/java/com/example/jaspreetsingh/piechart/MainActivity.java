@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // Disable the slice shift
         dataSet.setSelectionShift(0);
         // Formatting the value from float to integer using custom Formatter
-        dataSet.setValueFormatter(new Formatter());
+        data.setValueFormatter(new Formatter());
 
         // Get the chart
         PieChart chart = (PieChart) findViewById(R.id.pie_chart);

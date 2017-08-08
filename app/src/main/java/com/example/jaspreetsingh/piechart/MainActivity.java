@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
         l.setFormSize(14);
         // set the size of the legend text
         l.setTextSize(14);
+        // set shape of the legend as circular
+        l.setForm(Legend.LegendForm.CIRCLE);
 
 
     }

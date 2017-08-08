@@ -30,13 +30,26 @@ public class CustomMarkerView extends MarkerView {
     // content (user-interface)
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
-
-        tvContent.setText("" + (int) e.getY()); // set the entry-value as the display text
+        // set the entry-value as the display text
+        tvContent.setText("" + (int) e.getY());
         // this will perform necessary layout
         super.refreshContent(e, highlight);
     }
+
+    /**
+     * To set the alignment of the marker view
+     *
+     */
+    private MPPointF mOffset;
+
     @Override
     public MPPointF getOffset() {
-        return new MPPointF(-(getWidth() ), -getHeight()  );
+
+        if(mOffset == null) {
+            // center the marker horizontally and vertically
+            mOffset = new MPPointF(-(getWidth() ), -getHeight() );
+        }
+
+        return mOffset;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.jaspreetsingh.piechart;
 
-;
+
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,12 +28,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         setupPieChart();
     }
 
     private void setupPieChart() {
-        // List for the Pie chart PieEnteries
+        // List for the Pie chart Pie Enteries
         ArrayList<PieEntry> pieEnteries = new ArrayList<>();
         for(int i = 0; i < sales.length; i++)   {
             pieEnteries.add(new PieEntry(sales[i], priorityLables[i]));
@@ -56,16 +55,17 @@ public class MainActivity extends AppCompatActivity {
         // Formatting the value from float to integer using custom Formatter
         data.setValueFormatter(new Formatter());
 
+
         // Get the chart
         PieChart chart = (PieChart) findViewById(R.id.pie_chart);
         chart.setData(data);
         // refresh chart
         chart.invalidate();
-        // Animate the pic chart build clockwise parameter is time in millisecond
+        // Animate the pic chart build clockwise parameter is time in millisecondf
         chart.animateY(2000);
         // Disable the touch rotation
         chart.setRotationEnabled(true);
-        // Remove legends from pie chart
+        // Remove names from pie chart
         chart.setDrawEntryLabels(false);
 
 
@@ -82,7 +82,5 @@ public class MainActivity extends AppCompatActivity {
         // set shape of the legend as circular
         l.setForm(Legend.LegendForm.CIRCLE);
 
-
     }
-
 }

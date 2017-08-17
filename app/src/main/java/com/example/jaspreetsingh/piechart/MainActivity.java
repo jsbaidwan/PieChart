@@ -20,7 +20,7 @@ import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
 public class MainActivity extends AppCompatActivity {
 
 
-    int sales[] = {0, 12, 1, 1, 38};
+    int sales[] = {0, 0, 0, 0, 50};
     String priorityLables[] = {"Hot+", "Hot", "Warm", "Cold", "Shortfall"};
 
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // refresh chart
         chart.invalidate();
         // Animate the pic chart build clockwise parameter is time in millisecondf
-        chart.animateY(2000);
+        chart.animateY(1000);
         // Disable the touch rotation
         chart.setRotationEnabled(true);
         // Remove names from pie chart

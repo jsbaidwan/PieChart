@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // refresh chart
         chart.invalidate();
         // Animate the pic chart build clockwise parameter is time in millisecondf
-        chart.animateY(1000);
+        chart.animateY(2000);
         // Disable the touch rotation
         chart.setRotationEnabled(true);
         // Remove names from pie chart
